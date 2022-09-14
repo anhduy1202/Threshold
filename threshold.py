@@ -8,7 +8,7 @@ SCALED_HEIGHT = int(height * scalePercent / 100)
 scaled_horse = cv2.resize(horse, (SCALED_WIDTH, SCALED_HEIGHT))
 cv2.imshow("Original", scaled_horse)
 grayscale = cv2.cvtColor(scaled_horse, cv2.COLOR_BGR2GRAY)
-_, mask = cv2.threshold(grayscale, 0, 255, cv2.THRESH_BINARY)
+_, mask = cv2.threshold(grayscale, 100, 255, cv2.THRESH_BINARY)
 thresholdBlur = cv2.medianBlur(mask, 15, 0)
 
 # src, dst, maxValue, adaptiveMethod, thresholdType, blockSize, C
